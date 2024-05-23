@@ -37,8 +37,7 @@ def main():
 #BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M
       #  llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0e.bin",model_type="llama",
         llm = CTransformers(model="BashitAli/pytorch_model.bin",model_type="llama",
-
-                    config={'max_new_tokens':128,'temperature':0.01})
+             config={'max_new_tokens':128,'temperature':0.01})
         
         template = """Extract invoice number, name of organization, address, date, 
             Qty, Rate ,Tax ,Amount {pages}
