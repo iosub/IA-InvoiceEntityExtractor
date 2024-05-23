@@ -36,7 +36,10 @@ def main():
 #model = AutoModel.from_pretrained("BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M")
 #BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M
       #  llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0e.bin",model_type="llama",
-        llm = CTransformers(model="BashitAli/pytorch_model.bin",model_type="llama",
+      #https://huggingface.co/atharvapawar/llama-2-7b-chat.ggmlv3.q8_0/tree/main
+      #atharvapawar/llama-2-7b-chat.ggmlv3.q8_0
+      
+        llm = CTransformers(model="atharvapawar/llama-2-7b-chat.ggmlv3.q8_0.bin",model_type="llama",
              config={'max_new_tokens':128,'temperature':0.01})
         
         template = """Extract invoice number, name of organization, address, date, 
