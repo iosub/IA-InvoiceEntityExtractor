@@ -1,7 +1,7 @@
 import streamlit as st
 from tempfile import NamedTemporaryFile
-from langchain.document_loaders import PyPDFLoader
-from langchain.llms import CTransformers
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.llms import CTransformers
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
@@ -24,8 +24,20 @@ def main():
 
         for page in pages:
             st.write(page.page_content)
+#https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/README.md?code=true
 
-        llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin",model_type="llama",
+#https://github.com/marella/ctransformers
+#https://python.langchain.com/v0.1/docs/integrations/providers/ctransformers/
+
+#patliu1001/llama-2-7b-chat.ggmlv3.q8_0.bin
+#https://huggingface.co/BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M/tree/main
+# Load model directly
+#from transformers import AutoModel
+#model = AutoModel.from_pretrained("BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M")
+#BashitAli/llama-2-7b-chat.ggmlv3.q5_K_M
+      #  llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0e.bin",model_type="llama",
+        llm = CTransformers(model="BashitAli/pytorch_model.bin",model_type="llama",
+
                     config={'max_new_tokens':128,'temperature':0.01})
         
         template = """Extract invoice number, name of organization, address, date, 

@@ -1,4 +1,6 @@
 langchain
+langchain-community
 streamlit
 pypdf
 huggingface-hub
+
